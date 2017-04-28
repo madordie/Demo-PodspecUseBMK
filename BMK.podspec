@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
     s.dependency 'BaiduMapKit'
     s.pod_target_xcconfig = {
         'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit',
+        'LIBRARY_SEARCH_PATHS'   => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit/thirdlibs',
         'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
     }
 end

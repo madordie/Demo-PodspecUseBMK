@@ -1,12 +1,12 @@
 {
   "name": "BMK",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "license": {
     "type": "MIT"
   },
-  "homepage": "http://www.fangdd.com/shanghai",
+  "homepage": "https://www.github.com/madordie",
   "authors": {
-    "sunjigang": "sunjigang@fangdd.com"
+    "sunjigang": "keith_127@126.com"
   },
   "summary": "BMK",
   "platforms": {
@@ -26,6 +26,7 @@
   },
   "pod_target_xcconfig": {
     "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit",
+    "LIBRARY_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit/thirdlibs",
     "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
   }
 }
