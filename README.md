@@ -1,4 +1,7 @@
 # Demo-PodspecUseBMK
+
+暂不可用  release crash
+
 百度地图SDK是静态库，当使用Swift的时候需要在`Podfile`中添加`use_frameworks!`配置项，则百度地图无法使用😭
 
 # 遇到的问题
