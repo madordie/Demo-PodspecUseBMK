@@ -1,0 +1,31 @@
+{
+  "name": "BMK",
+  "version": "0.0.4",
+  "license": {
+    "type": "MIT"
+  },
+  "homepage": "http://www.fangdd.com/shanghai",
+  "authors": {
+    "sunjigang": "sunjigang@fangdd.com"
+  },
+  "summary": "BMK",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "xx"
+  },
+  "module_name": "BMK",
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "podspec/*",
+  "dependencies": {
+    "BaiduMapKit": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit",
+    "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
+  }
+}

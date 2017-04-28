@@ -1,0 +1,19 @@
+PODS:
+  - BaiduMapKit (3.3.0)
+  - BMK (0.0.4):
+    - BaiduMapKit
+
+DEPENDENCIES:
+  - BMK (from `.`)
+
+EXTERNAL SOURCES:
+  BMK:
+    :path: "."
+
+SPEC CHECKSUMS:
+  BaiduMapKit: 6517f84bdca032170ee9da39985bb64eba8ed900
+  BMK: 5da8f1af2f44656cb2c685f92c9c583c90cf2cfb
+
+PODFILE CHECKSUM: 5488b056735e3af021bdce74bf864827dc246f60
+
+COCOAPODS: 1.2.1

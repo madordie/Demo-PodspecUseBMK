@@ -1,0 +1,6 @@
+framework module BMK {
+  umbrella header "BMK-umbrella.h"
+
+  export *
+  module * { export * }
+}
