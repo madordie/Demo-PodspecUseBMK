@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.name         = 'BMK'
-    s.version      = '0.0.4'
+    s.version      = '0.0.1'
     s.license      = { :type => 'MIT' }
-    s.homepage     = 'http://www.fangdd.com/shanghai'
-    s.author       = { 'sunjigang' => 'sunjigang@fangdd.com' }
+    s.homepage     = 'https://www.github.com/madordie'
+    s.author       = { 'sunjigang' => 'keith_127@126.com' }
     s.summary      = 'BMK'
 
     s.platform     =  :ios, '7.0'
