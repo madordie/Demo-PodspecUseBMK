@@ -13,7 +13,7 @@
 如果有更好的配置方法，或者此方法有什么不妥的地方(特别是添加framework这块)，请指正～
 
 ### podspec配置
-```
+```rb
 s.dependency 'BaiduMapKit'
 s.pod_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit',
@@ -22,7 +22,7 @@ s.pod_target_xcconfig = {
 }
 ```
 ### Podfile配置
-```
+```rb
 
 pre_install do |installer|
     # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
@@ -59,11 +59,11 @@ end
 ## 遇到的问题
 
 ### target has transitive dependencies that include static binaries
-```
+```sh
 [!] The 'Pods-BaiduMapKit-pods' target has transitive dependencies that include static binaries: (**.framework)
 ```
 需要在工程的`Podfile`中配置：
-```
+```rb
 pre_install do |installer|
     # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
     def installer.verify_no_static_framework_transitive_dependencies; end
@@ -73,7 +73,7 @@ end
 
 ### podspace所在工程无法使用百度地图SDK，找不到头文件
 需要在podspec中进行如下配置：
-```
+```rb
 s.pod_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit',
     'LIBRARY_SEARCH_PATHS'   => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit/thirdlibs',
