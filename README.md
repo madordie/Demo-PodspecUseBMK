@@ -1,18 +1,18 @@
-# Demo-PodspecUseBMK
+## Demo-PodspecUseBMK
 
 百度地图SDK是静态库，当使用Swift的时候需要在`Podfile`中添加`use_frameworks!`配置项，则百度地图无法使用😭
 
-# 实现效果
+## 实现效果
 
 自动在私有Pods(`BMK`)中增加静态库(`BaiduMapKit`)的包含功能。
 
-# 配置方法
+## 配置方法
 
 这里只说需要额外更改的部分。
 
 如果有更好的配置方法，或者此方法有什么不妥的地方(特别是添加framework这块)，请指正～
 
-## podspec配置
+### podspec配置
 ```
 s.dependency 'BaiduMapKit'
 s.pod_target_xcconfig = {
@@ -21,7 +21,7 @@ s.pod_target_xcconfig = {
     'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
 }
 ```
-## Podfile配置
+### Podfile配置
 ```
 
 pre_install do |installer|
@@ -56,9 +56,9 @@ post_install do |installer|
 end
 ```
 
-# 遇到的问题
+## 遇到的问题
 
-## target has transitive dependencies that include static binaries
+### target has transitive dependencies that include static binaries
 ```
 [!] The 'Pods-BaiduMapKit-pods' target has transitive dependencies that include static binaries: (**.framework)
 ```
@@ -71,7 +71,7 @@ end
 ```
 即可。
 
-## podspace所在工程无法使用百度地图SDK，找不到头文件
+### podspace所在工程无法使用百度地图SDK，找不到头文件
 需要在podspec中进行如下配置：
 ```
 s.pod_target_xcconfig = {
@@ -87,7 +87,7 @@ s.pod_target_xcconfig = {
 
 对于其他的静态库，同理即可。
 
-## build ipa crash..
+### build ipa crash..
 crash信息主要为`BMK`无法载入`FRAMEWORK_SEARCH_PATHS`配置的framework。
 此问题主要为framework只是在search的时候指定了search path 但是当打包之后鬼知道发生了什么，这里配置的库就丢了。为此搜索了很多比如：
 - [CocoaPods/Xcodeproj/Issues/#408/@jpsim](https://github.com/CocoaPods/Xcodeproj/issues/408)
