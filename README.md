@@ -1,8 +1,61 @@
 # Demo-PodspecUseBMK
 
-暂不可用  release crash
-
 百度地图SDK是静态库，当使用Swift的时候需要在`Podfile`中添加`use_frameworks!`配置项，则百度地图无法使用😭
+
+# 配置方法
+
+这里只说需要额外更改的部分。
+
+如果有更好的配置方法，或者此方法有什么不妥的地方(特别是添加framework这块)，请指正～
+
+## podspec配置
+```
+s.dependency 'BaiduMapKit'
+s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit',
+    'LIBRARY_SEARCH_PATHS'   => '$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit/thirdlibs',
+    'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+}
+```
+## Podfile配置
+```
+
+pre_install do |installer|
+    # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
+    def installer.verify_no_static_framework_transitive_dependencies; end
+end
+
+post_install do |installer|
+    project_location = './Pods/Pods.xcodeproj'
+    # 设置使用#{framework_names}对应的target
+    target_names = ['BMK']
+    # #{framework_names}对应#{Pods}的路径
+    framework_root = './BaiduMapKit/BaiduMapKit'
+    framework_names = [
+    'BaiduMapAPI_Base.framework',
+    'BaiduMapAPI_Cloud.framework',
+    'BaiduMapAPI_Location.framework',
+    'BaiduMapAPI_Map.framework',
+    'BaiduMapAPI_Radar.framework',
+    'BaiduMapAPI_Search.framework',
+    'BaiduMapAPI_Utils.framework',
+    ]
+
+    project = installer.pods_project
+
+    target_names.each do |target_name|
+        target = project.targets.find { |target| target.to_s == target_name }
+        frameworks_group = project.groups.find { |group| group.display_name == 'Frameworks' }
+        frameworks_build_phase = target.build_phases.find { |build_phase| build_phase.to_s == 'FrameworksBuildPhase' }
+
+        # Add framework to target as "Embedded Frameworks"
+        framework_names.each do |framework_name|
+            framework_ref = frameworks_group.new_file("#{framework_root}/#{framework_name}")
+            frameworks_build_phase.add_file_reference(framework_ref)
+        end
+    end
+end
+```
 
 # 遇到的问题
 
@@ -34,3 +87,11 @@ s.pod_target_xcconfig = {
 `BaiduMapKit`对于上面的两个路径就是上面的路径。
 
 对于其他的静态库，同理即可。
+
+## build ipa crash..
+crash信息主要为`BMK`无法载入`FRAMEWORK_SEARCH_PATHS`配置的framework。
+此问题主要为framework只是在search的时候指定了search path 但是当打包之后鬼知道发生了什么，这里配置的库就丢了。为此搜索了很多比如：
+- [CocoaPods/Xcodeproj/Issues/#408/@jpsim](https://github.com/CocoaPods/Xcodeproj/issues/408)
+- [`post_install`官方文档(内容着实太少，后搜索其API)](https://guides.cocoapods.org/syntax/podfile.html#post_install)
+- [CocoaPods API](http://www.rubydoc.info/github/CocoaPods/CocoaPods/Pod)
+- 等等。。
