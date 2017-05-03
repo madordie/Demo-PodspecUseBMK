@@ -33,8 +33,6 @@ post_install do |installer|
     project_location = './Pods/Pods.xcodeproj'
     # 设置使用#{framework_names}对应的target
     target_names = ['BMK']
-    # #{framework_names}对应#{Pods}的路径
-    framework_root = './BaiduMapKit/BaiduMapKit'
     framework_names = [ 'BaiduMapKit' ]
 
     project = installer.pods_project
