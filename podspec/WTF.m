@@ -10,4 +10,8 @@
 
 @implementation WTF
 
+- (void)map {
+    BMKMapView *view = [BMKMapView new];
+}
+
 @end

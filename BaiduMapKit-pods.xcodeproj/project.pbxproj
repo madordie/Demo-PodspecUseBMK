@@ -352,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JW6AL86C37;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "BaiduMapKit-pods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.madordie.BaiduMapKit-pods";
@@ -365,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JW6AL86C37;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "BaiduMapKit-pods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.madordie.BaiduMapKit-pods";

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Map/BMKMapView.h>
 
 @interface WTF : UICollectionReusableView
 

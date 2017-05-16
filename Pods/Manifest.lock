@@ -1,5 +1,5 @@
 PODS:
-  - BaiduMapKit (3.3.0)
+  - BaiduMapKit (3.3.1)
   - BMK (0.0.1):
     - BaiduMapKit
 
@@ -11,8 +11,8 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  BaiduMapKit: 6517f84bdca032170ee9da39985bb64eba8ed900
-  BMK: d11cde556a3f1bc33668c661600d184326d2f748
+  BaiduMapKit: 9e8ff80bbcfb8f96b4a58b2844d728590dac90ca
+  BMK: 2f538dd899b923eff416ae680813e99e7512c50f
 
 PODFILE CHECKSUM: def91f6fa67c6fbb8de9e2703a946e1e97188604
 
