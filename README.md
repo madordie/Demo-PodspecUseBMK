@@ -94,3 +94,14 @@ crash信息主要为`BMK`无法载入`FRAMEWORK_SEARCH_PATHS`配置的framework�
 - [`post_install`官方文档(内容着实太少，后搜索其API)](https://guides.cocoapods.org/syntax/podfile.html#post_install)
 - [CocoaPods API](http://www.rubydoc.info/github/CocoaPods/CocoaPods/Pod)
 - 等等。。
+
+## 美中不足
+
+### One of the two will be used. Which one is undefined.
+
+其实ipa中含有两份百度地图相关库。
+
+```sh
+objc[22062]: Class BMSDKKeychainItemWrapper is implemented in both ~/Library/Developer/CoreSimulator/Devices/3F7A878A-C93D-40C1-87E7-44696FD4F992/data/Containers/Bundle/Application/90FB4FF0-A7C5-4454-9FE8-139542FA9BBF/BaiduMapKit-pods.app/Frameworks/BMK.framework/BMK (0x10cd5d7a8) and ~/Library/Developer/CoreSimulator/Devices/3F7A878A-C93D-40C1-87E7-44696FD4F992/data/Containers/Bundle/Application/90FB4FF0-A7C5-4454-9FE8-139542FA9BBF/BaiduMapKit-pods.app/BaiduMapKit-pods (0x10c6a63a0). One of the two will be used. Which one is undefined.
+...
+```
