@@ -27,7 +27,6 @@
 		320867591EB2EB28008619D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3208675C1EB2EB28008619D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3208675E1EB2EB28008619D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		322565411EB2F81300E58728 /* BMK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMK.podspec; sourceTree = "<group>"; };
 		32E6E1BADDD6B5CEDFDF83B2 /* Pods_BaiduMapKit_pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaiduMapKit_pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B371F3829F311A87E2A58B /* Pods-BaiduMapKit-pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiduMapKit-pods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F3777073EC14F56023000FFE /* Pods-BaiduMapKit-pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiduMapKit-pods.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,7 +47,6 @@
 		320867411EB2EB28008619D6 = {
 			isa = PBXGroup;
 			children = (
-				322565411EB2F81300E58728 /* BMK.podspec */,
 				3208674C1EB2EB28008619D6 /* BaiduMapKit-pods */,
 				3208674B1EB2EB28008619D6 /* Products */,
 				B464A44C842E254752FC6B12 /* Pods */,
@@ -117,7 +115,7 @@
 				320867471EB2EB28008619D6 /* Frameworks */,
 				320867481EB2EB28008619D6 /* Resources */,
 				68724D73296B1228C1FE0BC5 /* [CP] Embed Pods Frameworks */,
-				D75A30764CF2BBA04A572212 /* [CP] Copy Pods Resources */,
+				E363A75402BD47CBB484DAFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +180,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BMK/BMK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -197,24 +198,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaiduMapKit-pods-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D75A30764CF2BBA04A572212 /* [CP] Copy Pods Resources */ = {
+		E363A75402BD47CBB484DAFB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
