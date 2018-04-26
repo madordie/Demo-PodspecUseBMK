@@ -13,6 +13,7 @@
 		320867581EB2EB28008619D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320867561EB2EB28008619D6 /* Main.storyboard */; };
 		3208675A1EB2EB28008619D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320867591EB2EB28008619D6 /* Assets.xcassets */; };
 		3208675D1EB2EB28008619D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3208675B1EB2EB28008619D6 /* LaunchScreen.storyboard */; };
+		328691BB20916B9C0093102F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328691BA20916B9C0093102F /* File.swift */; };
 		7CA27A5449524C04ADF0DF4C /* Pods_BaiduMapKit_pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E6E1BADDD6B5CEDFDF83B2 /* Pods_BaiduMapKit_pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		320867591EB2EB28008619D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3208675C1EB2EB28008619D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3208675E1EB2EB28008619D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		328691B920916B9B0093102F /* BaiduMapKit-pods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaiduMapKit-pods-Bridging-Header.h"; sourceTree = "<group>"; };
+		328691BA20916B9C0093102F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		32E6E1BADDD6B5CEDFDF83B2 /* Pods_BaiduMapKit_pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaiduMapKit_pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B371F3829F311A87E2A58B /* Pods-BaiduMapKit-pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiduMapKit-pods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F3777073EC14F56023000FFE /* Pods-BaiduMapKit-pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiduMapKit-pods.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				3208675B1EB2EB28008619D6 /* LaunchScreen.storyboard */,
 				3208675E1EB2EB28008619D6 /* Info.plist */,
 				3208674D1EB2EB28008619D6 /* Supporting Files */,
+				328691BA20916B9C0093102F /* File.swift */,
+				328691B920916B9B0093102F /* BaiduMapKit-pods-Bridging-Header.h */,
 			);
 			path = "BaiduMapKit-pods";
 			sourceTree = "<group>";
@@ -115,7 +120,7 @@
 				320867471EB2EB28008619D6 /* Frameworks */,
 				320867481EB2EB28008619D6 /* Resources */,
 				68724D73296B1228C1FE0BC5 /* [CP] Embed Pods Frameworks */,
-				E363A75402BD47CBB484DAFB /* [CP] Copy Pods Resources */,
+				D173ADA0780014273E4986EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +143,7 @@
 					320867491EB2EB28008619D6 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = JW6AL86C37;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -182,10 +188,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BMK/BMK.framework",
+				"${PODS_ROOT}/DeviceDNA/Framework/DeviceDNA.framework",
+				"${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework",
+				"${BUILT_PRODUCTS_DIR}/Qiniu/Qiniu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceDNA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HappyDNS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Qiniu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -210,7 +222,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E363A75402BD47CBB484DAFB /* [CP] Copy Pods Resources */ = {
+		D173ADA0780014273E4986EA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				320867551EB2EB28008619D6 /* ViewController.m in Sources */,
+				328691BB20916B9C0093102F /* File.swift in Sources */,
 				320867521EB2EB28008619D6 /* AppDelegate.m in Sources */,
 				3208674F1EB2EB28008619D6 /* main.m in Sources */,
 			);
@@ -358,12 +371,16 @@
 			baseConfigurationReference = E6B371F3829F311A87E2A58B /* Pods-BaiduMapKit-pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JW6AL86C37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "BaiduMapKit-pods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.madordie.BaiduMapKit-pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaiduMapKit-pods/BaiduMapKit-pods-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -372,12 +389,15 @@
 			baseConfigurationReference = F3777073EC14F56023000FFE /* Pods-BaiduMapKit-pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = JW6AL86C37;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "BaiduMapKit-pods/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.madordie.BaiduMapKit-pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BaiduMapKit-pods/BaiduMapKit-pods-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

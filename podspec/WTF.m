@@ -7,11 +7,18 @@
 //
 
 #import "WTF.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
+#import <DeviceDNA/DeviceDNA.h>
+#import <PLShortVideoKit/PLSImageSetting.h>
+#import <UMMobClick/MobClick.h>
 
 @implementation WTF
 
 - (void)map {
-    BMKMapView *view = [BMKMapView new];
+    NSLog([DeviceDNA new].description);
+    NSLog([BMKMapView new].description);
+    NSLog([PLSImageSetting new].description);
+    NSLog([UMAnalyticsConfig sharedInstance].description);
 }
 
 @end

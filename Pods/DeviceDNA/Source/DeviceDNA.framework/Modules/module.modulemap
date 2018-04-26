@@ -1,0 +1,6 @@
+framework module DeviceDNA {
+  umbrella header "DeviceDNA.h"
+
+  export *
+  module * { export * }
+}

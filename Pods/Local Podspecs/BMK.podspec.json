@@ -20,12 +20,20 @@
   "requires_arc": true,
   "source_files": "podspec/*",
   "dependencies": {
+    "DeviceDNA": [
+
+    ],
     "BaiduMapKit": [
+
+    ],
+    "PLShortVideoKit": [
+
+    ],
+    "UMengAnalytics": [
 
     ]
   },
   "pod_target_xcconfig": {
-    "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/BaiduMapKit/BaiduMapKit",
     "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
   }
 }

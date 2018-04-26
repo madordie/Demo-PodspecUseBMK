@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <BaiduMapAPI_Map/BMKShape.h>
+//#import <BaiduMapAPI_Map/BMKShape.h>
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSLog(@"%@", [BMKShape new]);
+//    NSLog(@"%@", [BMKShape new]);
     return YES;
 }
 

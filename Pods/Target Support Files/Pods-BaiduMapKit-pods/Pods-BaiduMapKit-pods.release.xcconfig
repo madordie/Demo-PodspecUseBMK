@@ -1,9 +1,11 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BMK" "${PODS_ROOT}/BaiduMapKit/BaiduMapKit"
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BMK" "${PODS_CONFIGURATION_BUILD_DIR}/HappyDNS" "${PODS_CONFIGURATION_BUILD_DIR}/Qiniu" "${PODS_ROOT}/BaiduMapKit/BaiduMapKit" "${PODS_ROOT}/DeviceDNA/Framework" "${PODS_ROOT}/PLShortVideoKit/Pod/Library" "${PODS_ROOT}/UMengAnalytics/umsdk_IOS_analyics_idfa_v4.2.4"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs"
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/BMK/BMK.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"crypto" -l"sqlite3.0" -l"ssl" -framework "BMK" -framework "BaiduMapAPI_Base" -framework "BaiduMapAPI_Cloud" -framework "BaiduMapAPI_Location" -framework "BaiduMapAPI_Map" -framework "BaiduMapAPI_Radar" -framework "BaiduMapAPI_Search" -framework "BaiduMapAPI_Utils" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreTelephony" -framework "OpenGLES" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"
+LIBRARY_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/UMengAnalytics/**" "${PODS_ROOT}/BaiduMapKit/BaiduMapKit/thirdlibs" "${PODS_ROOT}/PLShortVideoKit/Pod/Library"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/BMK/BMK.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/HappyDNS/HappyDNS.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Qiniu/Qiniu.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"MuseProcessor" -l"c++" -l"crypto" -l"sqlite3" -l"sqlite3.0" -l"ssl" -l"z" -framework "BMK" -framework "BaiduMapAPI_Base" -framework "BaiduMapAPI_Cloud" -framework "BaiduMapAPI_Location" -framework "BaiduMapAPI_Map" -framework "BaiduMapAPI_Radar" -framework "BaiduMapAPI_Search" -framework "BaiduMapAPI_Utils" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreTelephony" -framework "DeviceDNA" -framework "HappyDNS" -framework "OpenGLES" -framework "PLShortVideoKit" -framework "Qiniu" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UMMobClick"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
