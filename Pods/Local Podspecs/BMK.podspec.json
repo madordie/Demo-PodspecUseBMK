@@ -35,5 +35,6 @@
   },
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
-  }
+  },
+  "prepare_command": "cd Pods/UMengAnalytics/\ncd $(ls)/UMMobClick.framework\nif [ ! -d \"Modules\" ]; then\n    mkdir Modules\nfi\ncd Modules\ntouch module.modulemap\ncat <<-EOF > module.modulemap\nframework module UMMobClick {\n    header \"MobClick.h\"\n    header \"MobClickGameAnalytics.h\"\n    header \"MobClickSocialAnalytics.h\"\n\n    export *\n\n    link \"z\"\n    link \"sqlite3\"\n}\nEOF"
 }
