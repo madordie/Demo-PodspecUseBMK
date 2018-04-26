@@ -1,6 +1,6 @@
 ## Demo-PodspecUseBMK
 
-百度地图SDK是静态库，当使用Swift的时候需要在`Podfile`中添加`use_frameworks!`配置项，则百度地图无法使用😭
+在使用pod做模块化的时候，有一些framework在podspec中的swift文件内无法引入的，比如`BaiduMapKit`、`UMengAnalytics`等。这个Demo或许能解救你于水火之中。
 
 ## 实现效果
 
