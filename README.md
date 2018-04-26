@@ -64,6 +64,15 @@ framework module MODULE {
 
 一个或多个目录。
 
+### 使用
+
+#### 方案一
+
+将`mk_modulemap.sh`按照DEMO中的环境放置，在`podspec`中配置：
+```rb
+s.prepare_command = 'sh mk_modulemap.sh PATH1 PATH2'
+```
+
 ### PS
 
 `shell`功底较差，功能可用，脚本不忍直视，大佬们见笑了。。
