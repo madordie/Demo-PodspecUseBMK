@@ -1,0 +1,8 @@
+framework module BaiduMapAPI_Radar {
+    header "BMKRadarComponent.h"
+    header "BMKRadarManager.h"
+    header "BMKRadarOption.h"
+    header "BMKRadarResult.h"
+    header "BMKRadarVersion.h"
+    export *
+}

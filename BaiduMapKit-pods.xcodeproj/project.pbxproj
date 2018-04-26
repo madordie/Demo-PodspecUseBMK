@@ -188,16 +188,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BaiduMapKit-pods/Pods-BaiduMapKit-pods-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BMK/BMK.framework",
-				"${PODS_ROOT}/DeviceDNA/Framework/DeviceDNA.framework",
-				"${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework",
-				"${BUILT_PRODUCTS_DIR}/Qiniu/Qiniu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceDNA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HappyDNS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Qiniu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

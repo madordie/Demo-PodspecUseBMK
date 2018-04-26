@@ -2,21 +2,7 @@ PODS:
   - BaiduMapKit (3.4.4)
   - BMK (0.0.1):
     - BaiduMapKit
-    - DeviceDNA
-    - PLShortVideoKit
     - UMengAnalytics
-  - DeviceDNA (0.1.6)
-  - HappyDNS (0.3.13)
-  - PLShortVideoKit (1.10.0):
-    - PLShortVideoKit/ex-libMuseProcessor (= 1.10.0)
-    - PLShortVideoKit/libMuseProcessor (= 1.10.0)
-    - Qiniu (~> 7.1)
-  - PLShortVideoKit/ex-libMuseProcessor (1.10.0):
-    - Qiniu (~> 7.1)
-  - PLShortVideoKit/libMuseProcessor (1.10.0):
-    - Qiniu (~> 7.1)
-  - Qiniu (7.2.3):
-    - HappyDNS (~> 0.3)
   - UMengAnalytics (4.2.4)
 
 DEPENDENCIES:
@@ -25,10 +11,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - BaiduMapKit
-    - DeviceDNA
-    - HappyDNS
-    - PLShortVideoKit
-    - Qiniu
     - UMengAnalytics
 
 EXTERNAL SOURCES:
@@ -37,11 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BaiduMapKit: 4ac88f5a363500760392825b69709f4a0125f81e
-  BMK: c39c23e971ae17966da680226360720b3df1e7fd
-  DeviceDNA: 06c4c1af198fc8b44711d10bed39e0a8638b490d
-  HappyDNS: 17732b07a75bb9756bd6fe04452609e8da8c663e
-  PLShortVideoKit: 86099728bc288502de62b37865d479a85a849e15
-  Qiniu: ae0fea1cc379fae1560d8748ac537e0fbeb8626e
+  BMK: aadb2e2339d0109c7d35035987193077c6ced0ec
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
 
 PODFILE CHECKSUM: d42c34a9e494926b482b3b9f4cf61650d3283492

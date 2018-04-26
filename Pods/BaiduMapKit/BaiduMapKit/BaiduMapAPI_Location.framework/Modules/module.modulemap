@@ -1,0 +1,6 @@
+framework module BaiduMapAPI_Location {
+    header "BMKLocationComponent.h"
+    header "BMKLocationService.h"
+    header "BMKLocationVersion.h"
+    export *
+}
