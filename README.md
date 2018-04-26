@@ -44,6 +44,8 @@ s.prepare_command = 'sh mk_modulemap.sh Pods/BaiduMapKit Pods/UMengAnalytics'
 
 ## mk_modulemap.sh说明
 
+[mk_modulemap.sh](https://github.com/madordie/Demo-PodspecUseBMK/blob/master/mk_modulemap.sh)
+
 ### 功能
 
 脚本会遍历每个目录下所有的framework，并根据`.framework/Headers`补全其中缺失的`Modules/module.modulemap`。
@@ -64,4 +66,4 @@ framework module MODULE {
 
 ### PS
 
-`shell`功底较差，功能可用，脚本不忍直视
+`shell`功底较差，功能可用，脚本不忍直视，大佬们见笑了。。
