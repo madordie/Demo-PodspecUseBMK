@@ -68,10 +68,23 @@ framework module MODULE {
 
 #### 方案一
 
-将`mk_modulemap.sh`按照DEMO中的环境放置，在`podspec`中配置：
+将[mk_modulemap.sh](https://github.com/madordie/Demo-PodspecUseBMK/blob/master/mk_modulemap.sh)按照DEMO中的环境放置，在`podspec`中配置：
 ```rb
 s.prepare_command = 'sh mk_modulemap.sh PATH1 PATH2'
 ```
+
+#### 方案二
+
+讲[mk_modulemap.sh](https://github.com/madordie/Demo-PodspecUseBMK/blob/master/mk_modulemap.sh)放置在Podfile同级目录下，然后在Podfile中配置：
+```rb
+post_install do |installer|
+    system 'sh md_modulemap.sh Pods'
+end
+```
+
+#### 方案三
+
+处理脚本就在那里[mk_modulemap.sh](https://github.com/madordie/Demo-PodspecUseBMK/blob/master/mk_modulemap.sh)，你想咋用咋用。。只要解决问题就好！😄
 
 ### PS
 
