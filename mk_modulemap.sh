@@ -23,16 +23,23 @@ function mk_map(){
         return
     fi
     echo "framework module $framework_name {" >> $framework/Modules/module.modulemap
-    filelist=`ls $framework/Headers`
-    for file in $filelist ; do
-        echo "    header \"$file\"" >> $framework/Modules/module.modulemap
-    done
+    if [ -f  $framework/Headers/$framework_name-umbrella.h ]; then
+        echo "    umbrella header \"$framework_name-umbrella.h\"" >> $framework/Modules/module.modulemap
+    else
+        filelist=`ls $framework/Headers`
+        for file in $filelist ; do
+            echo "    header \"$file\"" >> $framework/Modules/module.modulemap
+        done
+    fi
     echo "    export *" >> $framework/Modules/module.modulemap
     echo "}" >> $framework/Modules/module.modulemap
 }
+
 
 for path in $* ; do
     for framework in `find $path -name "*.framework"`; do
         mk_map $framework
     done
 done
+
+echo "Append modulemap done"
